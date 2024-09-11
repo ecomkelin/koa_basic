@@ -1,0 +1,18 @@
+import Koa from 'koa';
+
+const app = new Koa();
+app.use(async (ctx, next) => {
+    if (ctx.path === '/favicon.ico') {
+        ctx.status = 204; // 204 No Content
+        return;
+    }
+    await next();
+});
+app.use(async (ctx: Koa.Context) => {
+    ctx.status = 200;
+    ctx.body = { code: 2, message: 'Hello, TypeScript with Koa!' };
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000');
+});

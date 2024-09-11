@@ -1,0 +1,1 @@
+v1.0.0  init 自动加载 collections 的模型
