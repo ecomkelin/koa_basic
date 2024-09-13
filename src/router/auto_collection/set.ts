@@ -2,7 +2,7 @@ import { Context } from 'koa';
 import Router from 'koa-router';
 import { Model } from 'mongoose';
 
-import { TypeRouter } from '../../../utils/interface/type'
+import { TypeRouter } from '@src/utils/interface/type'
 import { res_set, res_setMany } from '@src/utils/system/api';
 
 

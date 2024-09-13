@@ -5,13 +5,13 @@
 
 import Router from 'koa-router';
 import router_test from './test';
-import router_auto from './auto';
+import router_auto_collection from './auto_collection/_index';
+import router_auto_restful from './auto_restful/_index';
 
-import { TypeRouter } from '../utils/interface/type'
+import { TypeRouter } from '@src/utils/interface/type'
 import { Context } from 'koa';
 
 const router = new Router();
-
 const routers: TypeRouter[] = [];  // 为了展示所有路由 不加const使其成为 global变量
 
 /** 首页 测试路由 */
@@ -22,8 +22,8 @@ router_test(router);
 
 
 // 自动加载路由
-router_auto(router, routers);
-
+router_auto_collection(router, routers);
+router_auto_restful(router, routers);
 
 /** 查看所有路由 一定放在最后 */
 router.get('/routers', ctx => {

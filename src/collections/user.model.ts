@@ -71,5 +71,4 @@ dbSchema.pre('save', async function (next: Function) {
     }
 });
 
-export const COL_archive = mongoose.model<Interface>(CLname + '_archive', dbSchema);
 export default mongoose.model<Interface>(CLname, dbSchema);

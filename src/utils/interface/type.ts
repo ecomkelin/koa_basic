@@ -1,7 +1,8 @@
+export type RestfulMethod = 'post' | 'get' | 'put' | 'delete' | 'options' | 'head' | 'patch' | 'all';
 export type TypeRouter = {
     path: string;
     label?: string;
-    method: 'post' | 'get' | 'put' | 'delete' | 'options' | 'head' | 'patch' | 'all';
+    method: RestfulMethod;
 }
 
 export type Type_payload = {
